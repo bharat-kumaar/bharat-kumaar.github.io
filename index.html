@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="violet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharat Kumar | Full Stack AI Developer &amp; Code Sculptor</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Bharat Kumar - Full Stack Developer, AI Builder &amp; Backend Engineer proficient in Node.js, Express, MongoDB, Python, Java, and Cloud AI." />
+  <meta name="keywords" content="Bharat Kumar, Full Stack Developer, AI Engineer, Backend Engineer, Node.js, Python, Java, MongoDB, Portfolio, Software Engineer" />
+  <meta name="author" content="Bharat Kumar" />
+  <meta property="og:title" content="Bharat Kumar | Full Stack AI Developer &amp; Code Sculptor" />
+  <meta property="og:description" content="Computer Science Engineer with hands-on experience in full-stack web engineering, machine learning, and cloud architecture. Code. Create. Collaborate. Conquer." />
+  <meta property="og:image" content="assets/images/banner.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Dynamic Animated Canvas & Ambient Mesh -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="aurora-mesh-1"></div>
+  <div class="aurora-mesh-2"></div>
+  <div class="aurora-mesh-3"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-symbol">&gt;_</span> Bharat<span class="logo-highlight">.ai</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#bento-profile" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#sandbox" class="nav-link">API Sandbox</a></li>
+        <li><a href="#certifications" class="nav-link">Certificates</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <!-- Interactive Theme Switcher -->
+        <div class="theme-selector-wrap">
+          <button class="theme-btn-toggle" id="theme-toggle-btn" aria-label="Toggle theme dropdown">
+            <i class="fa-solid fa-palette"></i>
+            <span id="current-theme-name">Hyper-Violet</span>
+            <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-option active" data-theme-choice="violet">
+              <span class="theme-color-dot dot-violet"></span> Hyper-Violet
+            </button>
+            <button class="theme-option" data-theme-choice="emerald">
+              <span class="theme-color-dot dot-emerald"></span> Emerald Matrix
+            </button>
+            <button class="theme-option" data-theme-choice="sunset">
+              <span class="theme-color-dot dot-sunset"></span> Sunset Flare
+            </button>
+            <button class="theme-option" data-theme-choice="blue">
+              <span class="theme-color-dot dot-blue"></span> Cyber Blue
+            </button>
+          </div>
+        </div>
+
+        <!-- Audio FX Toggle -->
+        <button class="audio-toggle-btn sound-on" id="audio-toggle-btn" aria-label="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Resume Download -->
+        <a href="assets/docs/BHARAT-RESUME.pdf" target="_blank" class="btn btn-primary btn-sm" download="Bharat_Kumar_Resume.pdf">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full-Screen Cinematic Hero Section -->
+  <section class="hero hero-fullscreen" id="hero">
+    <!-- Cinematic Background Backdrop Image with Gradient Scrim Overlays -->
+    <div class="hero-backdrop" style="background-image: url('assets/images/hero-bg.jpg');"></div>
+    <div class="hero-overlay-scrim"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <!-- Live Status Radar Badge -->
+        <div class="hero-badge">
+          <span class="status-dot-pulse"></span>
+          <span>Available for Full Stack &amp; AI Roles (2026/2027)</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="hero-title">
+          Hi, I'm <span class="text-gradient">Bharat Kumar</span>
+        </h1>
+
+        <!-- Dynamic Typewriter Line -->
+        <div class="hero-typewriter-wrapper">
+          <span style="color:var(--accent-secondary); margin-right: 6px;">&gt;_</span>
+          <span id="typewriter-text"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+
+        <!-- Powerhouse Bio -->
+        <p class="hero-description">
+          Computer Science Engineer &amp; Full Stack AI Developer specializing in scalable microservices, intelligent automated systems, and high-performance backend architectures. Proficient in Node.js, Express, MongoDB, Python, and Azure AI Cloud.
+        </p>
+
+        <!-- Quick Glass HUD Highlight Metrics -->
+        <div class="hero-hud-strip">
+          <div class="hud-pill">
+            <span class="hud-label">ACADEMIC</span>
+            <span class="hud-val">8.57 CGPA</span>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">INDUSTRY</span>
+            <span class="hud-val">4 Internships</span>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">CREDENTIALS</span>
+            <span class="hud-val">14+ Verified</span>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">HONORS</span>
+            <span class="hud-val">1st Champion</span>
+          </div>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Explore Projects</span>
+          </a>
+          <a href="#terminal-section" class="btn btn-secondary">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Interactive Terminal</span>
+          </a>
+          <a href="assets/docs/BHARAT-RESUME.pdf" target="_blank" class="btn btn-secondary" download="Bharat_Kumar_Resume.pdf">
+            <i class="fa-regular fa-file-pdf"></i>
+            <span>Download CV</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- Social Media Quick Links -->
+        <div class="hero-socials">
+          <a href="https://github.com/bharat-kumaar" target="_blank" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/bharat-kumaar" target="_blank" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:bharatkumar70233@gmail.com" class="social-icon-btn" aria-label="Send Email" title="Email Bharat">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="tel:+917023318654" class="social-icon-btn" aria-label="Phone Number" title="Call Bharat">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual HUD Overlay: Floating Holographic Satellite Badges -->
+      <div class="hero-satellites" aria-hidden="true">
+        <div class="hero-satellite-pill sat-pos-1">
+          <div class="sat-icon"><i class="fa-brands fa-node-js"></i></div>
+          <div class="sat-text">
+            <span class="sat-title">Node.js &amp; Express</span>
+            <span class="sat-sub">Microservices &amp; REST APIs</span>
+          </div>
+        </div>
+
+        <div class="hero-satellite-pill sat-pos-2">
+          <div class="sat-icon" style="color:var(--accent-secondary);"><i class="fa-brands fa-python"></i></div>
+          <div class="sat-text">
+            <span class="sat-title">Python &amp; Data Science</span>
+            <span class="sat-sub">ML Modeling &amp; Pipelines</span>
+          </div>
+        </div>
+
+        <div class="hero-satellite-pill sat-pos-3">
+          <div class="sat-icon" style="color:#60a5fa;"><i class="fa-brands fa-microsoft"></i></div>
+          <div class="sat-text">
+            <span class="sat-title">Azure AI Cloud</span>
+            <span class="sat-sub">Cognitive Cloud Services</span>
+          </div>
+        </div>
+
+        <div class="hero-satellite-pill sat-pos-4">
+          <div class="sat-icon" style="color:#10b981;"><i class="fa-solid fa-database"></i></div>
+          <div class="sat-text">
+            <span class="sat-title">MongoDB &amp; Redis</span>
+            <span class="sat-sub">Document &amp; In-Memory Cache</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Scroll-Down Prompt -->
+    <a href="#bento-profile" class="hero-scroll-indicator" aria-label="Scroll to explore profile">
+      <span class="scroll-text">SCROLL TO EXPLORE</span>
+      <div class="mouse-icon">
+        <div class="mouse-wheel"></div>
+      </div>
+      <i class="fa-solid fa-chevron-down scroll-chevron"></i>
+    </a>
+  </section>
+
+  <!-- Quick Stats Ribbon -->
+  <section class="stats-strip" style="padding: 2.5rem 0; margin-top: -2rem; position: relative; z-index: 10;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+      <div class="holo-card" style="padding: 1.85rem; text-align: center;">
+        <div style="font-family:var(--font-heading); font-size: 2.75rem; font-weight: 800; color: #fff; line-height: 1;">
+          <span class="stat-counter" data-target="8.57" data-decimal="2">8.57</span><span style="color:var(--accent-primary); font-size: 1.5rem;"> CGPA</span>
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">
+          B.Tech in CSE (Arya / RTU Kota)
+        </div>
+      </div>
+
+      <div class="holo-card" style="padding: 1.85rem; text-align: center;">
+        <div style="font-family:var(--font-heading); font-size: 2.75rem; font-weight: 800; color: #fff; line-height: 1;">
+          <span class="stat-counter" data-target="4">4</span><span style="color:var(--accent-secondary); font-size: 1.5rem;">+</span>
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">
+          Internships &amp; Industry Residencies
+        </div>
+      </div>
+
+      <div class="holo-card" style="padding: 1.85rem; text-align: center;">
+        <div style="font-family:var(--font-heading); font-size: 2.75rem; font-weight: 800; color: #fff; line-height: 1;">
+          <span class="stat-counter" data-target="14">14</span><span style="color:var(--accent-primary); font-size: 1.5rem;">+</span>
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">
+          Verified Credentials &amp; Certifications
+        </div>
+      </div>
+
+      <div class="holo-card" style="padding: 1.85rem; text-align: center;">
+        <div style="font-family:var(--font-heading); font-size: 2.75rem; font-weight: 800; color: #fff; line-height: 1;">
+          <span class="stat-counter" data-target="1">1</span><span style="color:#f59e0b; font-size: 1.5rem;">st</span>
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">
+          Winner — Scintillation Gamecon
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid Section: AI Persona & Engineering Profile -->
+  <section class="section" id="bento-profile">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Bento Profile /&gt;</div>
+        <h2 class="section-title">The Mindset Behind <span class="text-gradient">The Engineering</span></h2>
+        <p class="section-subtitle">A high-density look at my AI builder philosophy, educational background, and engineering strengths.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento 1: Cinematic Code Sculptor (Span 7) -->
+        <div class="holo-card bento-card bento-span-7">
+          <div>
+            <div class="bento-header">
+              <div class="bento-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <span class="bento-tag">AI Engineer • Innovator • Builder</span>
+            </div>
+            <h3 class="bento-title">Cinematic Code Sculptor</h3>
+            <p class="bento-desc">
+              "I don't just use AI, I build, experiment, and create real-world impact." I combine deep technical foundations in full-stack architecture with cutting-edge artificial intelligence to transform conceptual ideas into production realities.
+            </p>
+          </div>
+          <div class="persona-pills">
+            <span class="persona-pill"><i class="fa-solid fa-bolt" style="color:var(--accent-primary);"></i> <strong>Working Style:</strong> Experimenter &amp; Problem Solver</span>
+            <span class="persona-pill"><i class="fa-solid fa-bullseye" style="color:var(--accent-secondary);"></i> <strong>Energy:</strong> Innovative &amp; Impactful</span>
+            <span class="persona-pill"><i class="fa-solid fa-code" style="color:var(--accent-tertiary);"></i> <strong>Mission:</strong> Intelligent, Scalable Solutions</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: AI Persona Matrix (Span 5) -->
+        <div class="holo-card bento-card bento-span-5">
+          <div>
+            <div class="bento-header">
+              <div class="bento-icon"><i class="fa-solid fa-brain"></i></div>
+              <span class="bento-tag">AI Persona</span>
+            </div>
+            <h3 class="bento-title">Mindset &amp; Vibe</h3>
+            <p class="bento-desc">
+              Power User &amp; Builder: I leverage AI to automate workflows, accelerate development lifecycles, and solve complex data challenges with precision.
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary);">
+              <span>Mindset:</span> <strong style="color:#fff;">Curious • Driven • Ambitious</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary);">
+              <span>Vibe:</span> <strong style="color:var(--accent-primary);">Calm • Focused • Visionary</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary);">
+              <span>Mantra:</span> <strong style="color:var(--accent-secondary);">Code. Create. Collaborate. Conquer.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Academic Foundation (Span 4) -->
+        <div class="holo-card bento-card bento-span-4">
+          <div class="bento-header">
+            <div class="bento-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="bento-tag">Academics</span>
+          </div>
+          <h3 class="bento-title">Education</h3>
+          <p class="bento-desc" style="font-size:0.95rem; margin-bottom: 0.5rem;">
+            <strong>B.Tech – Computer Science (2023–2027)</strong><br />
+            Arya College of Engg. &amp; IT | RTU Kota<br />
+            <span style="color:#10b981; font-weight:bold; font-size:1.05rem;">CGPA: 8.57 / 10</span>
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; margin-top: auto;">
+            Class XII CBSE: 62.6% | Class X CBSE: 85.6%
+          </div>
+        </div>
+
+        <!-- Bento 4: Core Technical Strengths (Span 4) -->
+        <div class="holo-card bento-card bento-span-4">
+          <div class="bento-header">
+            <div class="bento-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <span class="bento-tag">Expertise</span>
+          </div>
+          <h3 class="bento-title">Key Strengths</h3>
+          <ul style="list-style: none; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><i class="fa-solid fa-check" style="color:var(--accent-primary);"></i> Full-Stack &amp; AI Integration</li>
+            <li><i class="fa-solid fa-check" style="color:var(--accent-primary);"></i> RESTful APIs &amp; JWT Security</li>
+            <li><i class="fa-solid fa-check" style="color:var(--accent-primary);"></i> Database Design (MongoDB &amp; SQL)</li>
+            <li><i class="fa-solid fa-check" style="color:var(--accent-primary);"></i> In-Memory Caching (Redis)</li>
+          </ul>
+        </div>
+
+        <!-- Bento 5: Daily Mantra & Fuel (Span 4) -->
+        <div class="holo-card bento-card bento-span-4" style="text-align: center; align-items: center; justify-content: center;">
+          <div style="font-size: 2.25rem; color: var(--accent-secondary); margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <div style="font-family: var(--font-code); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">
+            COFFEE. CODE. FOCUS. REPEAT.
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 240px;">
+            Continuous iteration, relentless curiosity, and engineering for tomorrow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Tech Matrix /&gt;</div>
+        <h2 class="section-title">Technical <span class="text-gradient">Proficiencies</span></h2>
+        <p class="section-subtitle">Cutting-edge technologies, frameworks, databases, and engineering fundamentals.</p>
+      </div>
+
+      <div class="skills-filter">
+        <button class="filter-btn active" data-skill-filter="all">All Tech</button>
+        <button class="filter-btn" data-skill-filter="languages">Languages</button>
+        <button class="filter-btn" data-skill-filter="backend">Backend &amp; Database</button>
+        <button class="filter-btn" data-skill-filter="tools">Cloud &amp; Tools</button>
+        <button class="filter-btn" data-skill-filter="core">Core CS</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-card holo-card" data-category="languages">
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+          <div>
+            <div class="skill-name">Python</div>
+            <div class="skill-category">NumPy, Pandas, Flask</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="languages">
+          <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+          <div>
+            <div class="skill-name">Java</div>
+            <div class="skill-category">OOP &amp; Core Systems</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="languages">
+          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+          <div>
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-category">ES6+, Async, DOM</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="languages">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <div>
+            <div class="skill-name">SQL</div>
+            <div class="skill-category">MySQL, SQLite</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="languages">
+          <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+          <div>
+            <div class="skill-name">HTML5 &amp; CSS3</div>
+            <div class="skill-category">Responsive Design</div>
+          </div>
+        </div>
+
+        <!-- Backend & Databases -->
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
+          <div>
+            <div class="skill-name">Node.js</div>
+            <div class="skill-category">Asynchronous Runtime</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+          <div>
+            <div class="skill-name">Express.js</div>
+            <div class="skill-category">RESTful APIs &amp; Middleware</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-solid fa-leaf"></i></div>
+          <div>
+            <div class="skill-name">MongoDB &amp; Mongoose</div>
+            <div class="skill-category">NoSQL Document Modeling</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div>
+            <div class="skill-name">Redis</div>
+            <div class="skill-category">In-Memory Caching</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <div class="skill-name">JWT &amp; Security</div>
+            <div class="skill-category">Auth &amp; RBAC Control</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="backend">
+          <div class="skill-icon"><i class="fa-solid fa-pepper-hot"></i></div>
+          <div>
+            <div class="skill-name">Flask</div>
+            <div class="skill-category">Python Microservices</div>
+          </div>
+        </div>
+
+        <!-- Cloud & Tools -->
+        <div class="skill-card holo-card" data-category="tools">
+          <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+          <div>
+            <div class="skill-name">Git &amp; GitHub</div>
+            <div class="skill-category">Version Control &amp; CI/CD</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="tools">
+          <div class="skill-icon"><i class="fa-brands fa-microsoft"></i></div>
+          <div>
+            <div class="skill-name">Microsoft Azure</div>
+            <div class="skill-category">Cognitive AI &amp; Cloud</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="tools">
+          <div class="skill-icon"><i class="fa-brands fa-unity"></i></div>
+          <div>
+            <div class="skill-name">Unity Engine</div>
+            <div class="skill-category">C# Game Dev &amp; Physics</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="tools">
+          <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <div class="skill-name">VS Code &amp; Jupyter</div>
+            <div class="skill-category">Development Tooling</div>
+          </div>
+        </div>
+
+        <!-- Core CS -->
+        <div class="skill-card holo-card" data-category="core">
+          <div class="skill-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div>
+            <div class="skill-name">Data Structures (DSA)</div>
+            <div class="skill-category">Algorithmic Problem Solving</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="core">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <div>
+            <div class="skill-name">DBMS Architecture</div>
+            <div class="skill-category">Normalization &amp; Queries</div>
+          </div>
+        </div>
+
+        <div class="skill-card holo-card" data-category="core">
+          <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+          <div>
+            <div class="skill-name">Object-Oriented Design</div>
+            <div class="skill-category">SOLID Principles, OOP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Experience Timeline -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Career Track /&gt;</div>
+        <h2 class="section-title">Industry <span class="text-gradient">Experience &amp; Internships</span></h2>
+        <p class="section-subtitle">Real-world production engineering, data science, and cloud AI credentials.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- 1. Padmas Technologies -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content holo-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Full Stack Developer Intern</h3>
+                <div class="timeline-company">Padmas Technologies</div>
+              </div>
+              <span class="timeline-badge">05/2026 – 07/2026 (48 Days)</span>
+            </div>
+
+            <div class="timeline-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Remote</span>
+              <span><i class="fa-solid fa-certificate"></i> Verified Certificate</span>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li>Engineered full-stack web features using modern client-server architectures.</li>
+              <li>Developed and integrated RESTful APIs, JWT token-based authentication, and optimized database queries.</li>
+              <li>Collaborated on backend reliability with Node.js, Express.js, MongoDB, JavaScript, and Git.</li>
+              <li>Conducted API performance debugging, optimization, and integrated application features following Agile best practices.</li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">Express.js</span>
+              <span class="tag-pill">MongoDB</span>
+              <span class="tag-pill">JWT</span>
+              <span class="tag-pill">REST APIs</span>
+              <span class="tag-pill">Git</span>
+            </div>
+
+            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-outline btn-sm cert-trigger-btn" data-cert-src="assets/images/certificates/internship-padmas.png" data-cert-title="Padmas Technologies – Full Stack Developer Internship Credential" data-cert-issuer="Padmas Technologies (Remote) • May 2026 – July 2026">
+                <i class="fa-solid fa-certificate" style="color:var(--accent-primary);"></i>
+                <span>View Official Certificate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. GRRAS Solutions -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content holo-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Data Science &amp; Machine Learning Trainee</h3>
+                <div class="timeline-company">GRRAS Solutions</div>
+              </div>
+              <span class="timeline-badge">05/2026 – 07/2026 (45 Days)</span>
+            </div>
+
+            <div class="timeline-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Jaipur, Rajasthan</span>
+              <span><i class="fa-solid fa-certificate"></i> Intensive Program</span>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li>Completed intensive hands-on training in Data Science and Machine Learning using Python, NumPy, and Pandas.</li>
+              <li>Executed comprehensive data preprocessing, feature engineering, and statistical exploratory data analysis (EDA).</li>
+              <li>Trained, fine-tuned, and evaluated machine learning predictive models for analytical scenarios.</li>
+              <li>Strengthened problem-solving, mathematical intuition, and analytical debugging skills.</li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Pandas</span>
+              <span class="tag-pill">NumPy</span>
+              <span class="tag-pill">Machine Learning</span>
+              <span class="tag-pill">Data Analysis</span>
+            </div>
+
+            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-outline btn-sm cert-trigger-btn" data-cert-src="assets/images/certificates/internship-grras.jpg" data-cert-title="GRRAS Solutions – Data Science &amp; Machine Learning Traineeship" data-cert-issuer="GRRAS Solutions Pvt. Ltd. (Jaipur) • May 2026 – July 2026">
+                <i class="fa-solid fa-certificate" style="color:var(--accent-secondary);"></i>
+                <span>View Official Certificate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. TechForce Academy Australia -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content holo-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Game Programming with Unity Intern</h3>
+                <div class="timeline-company">TechForce Academy Australia</div>
+              </div>
+              <span class="timeline-badge">06/2025 – 08/2025 (57 Days)</span>
+            </div>
+
+            <div class="timeline-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Remote (Australia)</span>
+              <span><i class="fa-solid fa-trophy"></i> Game Development</span>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li>Developed practical understanding of game development, physics pipelines, and C# scripting in Unity.</li>
+              <li>Engineered character controllers, state machines, animation blends, and gameplay logic.</li>
+              <li>Strengthened programming, debugging, problem-solving, and game optimization through hands-on practice.</li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span class="tag-pill">Unity 3D</span>
+              <span class="tag-pill">C#</span>
+              <span class="tag-pill">Game Physics</span>
+              <span class="tag-pill">OOP</span>
+            </div>
+
+            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-outline btn-sm cert-trigger-btn" data-cert-src="assets/images/certificates/internship-techforce.jpg" data-cert-title="TechForce Academy Australia – Game Programming with Unity Internship" data-cert-issuer="TechForce Academy (Australia) • June 2025 – August 2025">
+                <i class="fa-solid fa-certificate" style="color:var(--accent-tertiary);"></i>
+                <span>View Official Certificate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Edunet Foundation | Microsoft Initiative -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content holo-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">AI Azure Intern</h3>
+                <div class="timeline-company">Edunet Foundation | Microsoft Initiative</div>
+              </div>
+              <span class="timeline-badge">06/2025 – 07/2025 (4 Weeks)</span>
+            </div>
+
+            <div class="timeline-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Remote</span>
+              <span><i class="fa-brands fa-microsoft"></i> Microsoft Program</span>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li>Completed intensive training covering Microsoft Azure Cloud infrastructure and Cognitive AI services.</li>
+              <li>Explored automated machine learning pipelines, cloud storage integration, and computer vision / NLP APIs.</li>
+              <li>Developed technical and problem-solving skills through hands-on cloud learning.</li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span class="tag-pill">Microsoft Azure</span>
+              <span class="tag-pill">Azure AI</span>
+              <span class="tag-pill">Cloud Computing</span>
+              <span class="tag-pill">Cognitive Services</span>
+            </div>
+
+            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-outline btn-sm cert-trigger-btn" data-cert-src="assets/images/certificates/internship-microsoft-edunet.jpg" data-cert-title="Microsoft | AICTE | Edunet – AI Azure Internship Credential" data-cert-issuer="Microsoft Initiative &amp; Edunet Foundation • June 2025 – July 2025">
+                <i class="fa-solid fa-certificate" style="color:#60a5fa;"></i>
+                <span>View Official Certificate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Showcase /&gt;</div>
+        <h2 class="section-title">Featured <span class="text-gradient">Production Projects</span></h2>
+        <p class="section-subtitle">Real-world applications showcasing full-stack engineering, API design, and database modeling.</p>
+      </div>
+
+      <div class="skills-filter">
+        <button class="filter-btn active" data-project-filter="all">All Projects</button>
+        <button class="filter-btn" data-project-filter="fullstack">Full Stack &amp; Node.js</button>
+        <button class="filter-btn" data-project-filter="python">Python &amp; AI</button>
+        <button class="filter-btn" data-project-filter="java">Java &amp; Systems</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 1. Smart Inventory -->
+        <div class="project-card holo-card" data-category="fullstack">
+          <div class="project-banner">
+            <div class="project-banner-watermark">INVENTORY</div>
+            <div class="project-icon-badge">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Inventory Management System</h3>
+            <p class="project-desc">
+              High-performance backend system engineered for managing products, warehouses, user access levels, and real-time inventory operations.
+            </p>
+            <ul class="project-bullets">
+              <li>JWT-based authentication with role-based authorization (RBAC) across protected routes.</li>
+              <li>RESTful APIs for comprehensive CRUD operations, pagination, filtering, and sorting.</li>
+              <li>Integrated Redis caching layer to dramatically reduce MongoDB query latency.</li>
+            </ul>
+            <div class="project-techs">
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">Express.js</span>
+              <span class="tag-pill">MongoDB</span>
+              <span class="tag-pill">Redis</span>
+              <span class="tag-pill">JWT</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/bharat-kumaar" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ShopWave -->
+        <div class="project-card holo-card" data-category="python fullstack">
+          <div class="project-banner">
+            <div class="project-banner-watermark">SHOPWAVE</div>
+            <div class="project-icon-badge">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ShopWave – E-Commerce Platform</h3>
+            <p class="project-desc">
+              Python and Flask-driven e-commerce platform with end-to-end shopping cart workflows, product catalog, customer authentication, and review pipelines.
+            </p>
+            <ul class="project-bullets">
+              <li>Integrated SQLite database with scalable schemas for products, orders, and reviews.</li>
+              <li>Created and managed a test dataset containing 250+ products and 1,500+ customer reviews.</li>
+              <li>Built responsive frontend with responsive cart state and search filtering.</li>
+            </ul>
+            <div class="project-techs">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Flask</span>
+              <span class="tag-pill">SQLite</span>
+              <span class="tag-pill">JavaScript</span>
+              <span class="tag-pill">HTML/CSS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/bharat-kumaar" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AI Stock Market Analytics -->
+        <div class="project-card holo-card" data-category="python">
+          <div class="project-banner">
+            <div class="project-banner-watermark">ANALYTICS</div>
+            <div class="project-icon-badge">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Quantum Dynamics / AI Stock Analytics</h3>
+            <p class="project-desc">
+              Advanced financial analytics platform providing real-time data feeds, predictive indicators, moving averages, and trend visualizations.
+            </p>
+            <ul class="project-bullets">
+              <li>Dynamic data processing engine using Python NumPy and Pandas for time-series analysis.</li>
+              <li>Interactive dashboard with real-time price trend indicators and technical triggers.</li>
+              <li>Modular backend architecture designed for low latency and high throughput.</li>
+            </ul>
+            <div class="project-techs">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Pandas</span>
+              <span class="tag-pill">NumPy</span>
+              <span class="tag-pill">REST APIs</span>
+              <span class="tag-pill">Charts</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/bharat-kumaar" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Smart Attendance System -->
+        <div class="project-card holo-card" data-category="java">
+          <div class="project-banner">
+            <div class="project-banner-watermark">ATTENDANCE</div>
+            <div class="project-icon-badge">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Attendance Management System</h3>
+            <p class="project-desc">
+              Java-powered administrative software application built to eliminate manual attendance tracking and streamline institutional recordkeeping.
+            </p>
+            <ul class="project-bullets">
+              <li>Comprehensive module for recording, updating, and retrieving student attendance statistics.</li>
+              <li>Reliable relational database management with strict data validation.</li>
+              <li>Applied Java programming and database concepts to develop the application.</li>
+            </ul>
+            <div class="project-techs">
+              <span class="tag-pill">Java</span>
+              <span class="tag-pill">DBMS</span>
+              <span class="tag-pill">SQL</span>
+              <span class="tag-pill">OOP</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/bharat-kumaar" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal 3.0 & API Sandbox -->
+  <section class="section" id="sandbox">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;API Sandbox /&gt;</div>
+        <h2 class="section-title">Developer <span class="text-gradient">Terminal 3.0</span></h2>
+        <p class="section-subtitle">Simulate real-time API queries to Bharat's backend or test interactive endpoints directly.</p>
+      </div>
+
+      <div class="terminal-wrapper">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+
+          <div class="terminal-api-shortcuts">
+            <button class="api-shortcut-btn" data-endpoint="GET /api/profile">GET /api/profile</button>
+            <button class="api-shortcut-btn" data-endpoint="GET /api/skills">GET /api/skills</button>
+            <button class="api-shortcut-btn" data-endpoint="GET /api/projects">GET /api/projects</button>
+            <button class="api-shortcut-btn" data-endpoint="POST /api/hire">POST /api/hire</button>
+            <button class="api-shortcut-btn" data-endpoint="help">help</button>
+            <button class="api-shortcut-btn" data-endpoint="clear">clear</button>
+          </div>
+        </div>
+
+        <div class="terminal-body">
+          <div id="terminal-output">
+            <div style="color:var(--accent-primary); font-weight:bold; margin-bottom:0.4rem;">
+              Bharat Kumar - Developer API Console [v3.2.0-RELEASE]
+            </div>
+            <div style="color:var(--text-muted); margin-bottom:1rem;">
+              Click any API shortcut button above, or type <span style="color:var(--accent-secondary); font-weight:bold;">'help'</span> below to run commands.
+            </div>
+          </div>
+
+          <div class="terminal-prompt-line">
+            <span class="terminal-prompt-label">visitor@bharat-dev:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'GET /api/profile' or 'help'..." autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Certificate Vault (Internships on TOP, then Best Certifications) -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Credentials &amp; Residencies /&gt;</div>
+        <h2 class="section-title">Verified <span class="text-gradient">Internships &amp; Certifications</span></h2>
+        <p class="section-subtitle">Official industry engineering credentials, intensive developer residencies, and verified certifications across Full Stack, Machine Learning, and Cloud AI.</p>
+      </div>
+
+      <!-- VIP OFFICIAL INTERNSHIP SPOTLIGHT (TOP PRIORITY) -->
+      <div class="internship-spotlight-box">
+        <div class="internship-spotlight-header">
+          <div>
+            <span class="vip-badge"><i class="fa-solid fa-stamp"></i> Top-Tier Industry Residencies</span>
+            <h3 class="internship-spotlight-title" style="margin-top: 0.6rem;">
+              <span class="text-gradient">Official Internship Credentials</span> &amp; Industry Traineeships
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.35rem; max-width: 680px;">
+              Direct production-grade engineering residencies completed across Full Stack Web Systems, Machine Learning &amp; Data Science, Game Engine Architecture, and Cloud Cognitive AI. Click any card to inspect the authentic high-resolution certificate.
+            </p>
+          </div>
+          <div>
+            <span style="font-family: var(--font-code); font-size: 0.82rem; color: var(--accent-primary); background: rgba(168, 85, 247, 0.12); border: 1px solid var(--border-glow); padding: 0.4rem 0.9rem; border-radius: var(--radius-full); display: inline-flex; align-items: center; gap: 0.4rem;">
+              <i class="fa-solid fa-circle-check"></i> 4 Verified Residencies
+            </span>
+          </div>
+        </div>
+
+        <div class="internship-grid">
+          <!-- 1. Padmas Technologies -->
+          <div class="internship-card holo-card" data-img="assets/images/certificates/internship-padmas.png" data-title="Padmas Technologies – Full Stack Developer Internship Credential" data-issuer="Padmas Technologies (Remote) • May 2026 – July 2026 (48 Days)">
+            <div class="cert-img-wrap" style="position: relative;">
+              <div class="internship-ribbon"><i class="fa-solid fa-crown"></i> Full Stack Web</div>
+              <img src="assets/images/certificates/internship-padmas.png" alt="Padmas Technologies Full Stack Developer Internship" class="cert-img" />
+              <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-body" style="padding: 1.4rem;">
+              <span class="cert-category-tag" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-primary); border: 1px solid rgba(168, 85, 247, 0.3);">Full Stack Engineering</span>
+              <h4 class="cert-title" style="font-size: 1.15rem; margin: 0.4rem 0 0.25rem;">Full Stack Developer Intern</h4>
+              <div class="cert-issuer" style="font-weight: 600; color: #fff;"><i class="fa-solid fa-building"></i> Padmas Technologies</div>
+              <div class="cert-date" style="color: var(--accent-secondary);"><i class="fa-regular fa-calendar-check"></i> 05/2026 – 07/2026 (48 Days)</div>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.65rem; line-height: 1.5;">
+                Engineered robust Node.js RESTful APIs, JWT token security, and schema-optimized MongoDB collections.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. GRRAS Solutions -->
+          <div class="internship-card holo-card" data-img="assets/images/certificates/internship-grras.jpg" data-title="GRRAS Solutions – Data Science &amp; Machine Learning Traineeship" data-issuer="GRRAS Solutions Pvt. Ltd. (Jaipur) • May 2026 – July 2026 (45 Days)">
+            <div class="cert-img-wrap" style="position: relative;">
+              <div class="internship-ribbon"><i class="fa-solid fa-brain"></i> Data Science &amp; ML</div>
+              <img src="assets/images/certificates/internship-grras.jpg" alt="GRRAS Solutions Data Science and ML Training" class="cert-img" />
+              <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-body" style="padding: 1.4rem;">
+              <span class="cert-category-tag" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-secondary); border: 1px solid rgba(236, 72, 153, 0.3);">Machine Learning &amp; AI</span>
+              <h4 class="cert-title" style="font-size: 1.15rem; margin: 0.4rem 0 0.25rem;">Data Science &amp; ML Trainee</h4>
+              <div class="cert-issuer" style="font-weight: 600; color: #fff;"><i class="fa-solid fa-building"></i> GRRAS Solutions Pvt. Ltd.</div>
+              <div class="cert-date" style="color: var(--accent-secondary);"><i class="fa-regular fa-calendar-check"></i> 05/2026 – 07/2026 (45 Days)</div>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.65rem; line-height: 1.5;">
+                Mastered Python, Pandas, statistical data preprocessing, EDA pipelines, and machine learning model fine-tuning.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. TechForce Academy Australia -->
+          <div class="internship-card holo-card" data-img="assets/images/certificates/internship-techforce.jpg" data-title="TechForce Academy Australia – Game Programming with Unity Internship" data-issuer="TechForce Academy (Australia) • June 2025 – August 2025 (57 Days)">
+            <div class="cert-img-wrap" style="position: relative;">
+              <div class="internship-ribbon"><i class="fa-solid fa-gamepad"></i> Unity 3D &amp; C#</div>
+              <img src="assets/images/certificates/internship-techforce.jpg" alt="TechForce Academy Australia Game Programming" class="cert-img" />
+              <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-body" style="padding: 1.4rem;">
+              <span class="cert-category-tag" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-tertiary); border: 1px solid rgba(6, 182, 212, 0.3);">Interactive Systems</span>
+              <h4 class="cert-title" style="font-size: 1.15rem; margin: 0.4rem 0 0.25rem;">Game Programming with Unity</h4>
+              <div class="cert-issuer" style="font-weight: 600; color: #fff;"><i class="fa-solid fa-building"></i> TechForce Academy Australia</div>
+              <div class="cert-date" style="color: var(--accent-secondary);"><i class="fa-regular fa-calendar-check"></i> 06/2025 – 08/2025 (57 Days)</div>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.65rem; line-height: 1.5;">
+                Developed character controllers, physics pipelines, collision algorithms, and interactive mechanics in Unity Engine.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. Microsoft | Edunet Foundation -->
+          <div class="internship-card holo-card" data-img="assets/images/certificates/internship-microsoft-edunet.jpg" data-title="Microsoft Initiative &amp; Edunet Foundation – AI Azure Internship Credential" data-issuer="Microsoft | AICTE | Edunet Foundation • June 2025 – July 2025 (4 Weeks)">
+            <div class="cert-img-wrap" style="position: relative;">
+              <div class="internship-ribbon"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</div>
+              <img src="assets/images/certificates/internship-microsoft-edunet.jpg" alt="Microsoft AI Azure Internship Certificate" class="cert-img" />
+              <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-body" style="padding: 1.4rem;">
+              <span class="cert-category-tag" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">Cloud &amp; Azure AI</span>
+              <h4 class="cert-title" style="font-size: 1.15rem; margin: 0.4rem 0 0.25rem;">AI Azure Intern</h4>
+              <div class="cert-issuer" style="font-weight: 600; color: #fff;"><i class="fa-brands fa-microsoft"></i> Edunet | Microsoft Initiative</div>
+              <div class="cert-date" style="color: var(--accent-secondary);"><i class="fa-regular fa-calendar-check"></i> 06/2025 – 07/2025 (4 Weeks)</div>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.65rem; line-height: 1.5;">
+                Trained in Azure Cognitive Services, cloud computer vision &amp; NLP pipelines, and cloud ML infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISTINGUISHED INDUSTRY CERTIFICATIONS & BADGES -->
+      <div style="margin-top: 4rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="tag-pill" style="font-size: 0.82rem; padding: 0.35rem 0.85rem; margin-bottom: 0.6rem; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent-secondary); border-color: var(--border-glow);">
+            <i class="fa-solid fa-award"></i> Specialized Industry Certifications
+          </span>
+          <h3 style="font-size: 1.85rem; font-weight: 800; color: #fff;">
+            Distinguished <span class="text-gradient">Technical Credentials &amp; Badges</span>
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem;">
+            Rigorous assessments and certifications verified by NASSCOM, Microsoft, MongoDB University, HackerRank, and Infosys.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certificate Category Filters -->
+      <div class="skills-filter">
+        <button class="filter-btn active" data-cert-filter="all">All Credentials (10)</button>
+        <button class="filter-btn" data-cert-filter="ai">AI &amp; Machine Learning (4)</button>
+        <button class="filter-btn" data-cert-filter="fullstack">Full Stack &amp; Tools (3)</button>
+        <button class="filter-btn" data-cert-filter="db">Database Systems (2)</button>
+        <button class="filter-btn" data-cert-filter="tools">UI / UX Design (1)</button>
+      </div>
+
+      <div class="certs-grid">
+        <!-- 1. NASSCOM FutureSkills Prime & INDIAai -->
+        <div class="cert-card holo-card" data-category="ai" data-img="assets/images/certificates/nasscom-indiaai.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/nasscom-indiaai.jpg" alt="Foundation of Artificial Intelligence NASSCOM" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Govt &amp; Industry Standard</span>
+            <h4 class="cert-title">Foundation of Artificial Intelligence</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-award"></i> NASSCOM FutureSkills Prime &amp; INDIAai</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified AI Credential</div>
+          </div>
+        </div>
+
+        <!-- 2. Microsoft Learn Student Ambassador Deep Learning -->
+        <div class="cert-card holo-card" data-category="ai" data-img="assets/images/certificates/microsoft-deep-learning.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/microsoft-deep-learning.jpg" alt="Deep Learning with Neural Networks" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Deep Learning &amp; Neural Nets</span>
+            <h4 class="cert-title">Deep Learning with Neural Networks</h4>
+            <div class="cert-issuer"><i class="fa-brands fa-microsoft"></i> Microsoft Learn Student Ambassador</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified ML Credential</div>
+          </div>
+        </div>
+
+        <!-- 3. HackerRank React Verified -->
+        <div class="cert-card holo-card" data-category="fullstack" data-img="assets/images/certificates/hackerrank-react.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/hackerrank-react.jpg" alt="Frontend Developer React" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Frontend &amp; React</span>
+            <h4 class="cert-title">Frontend Developer (React)</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-code"></i> HackerRank Verified Skills</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Skill Badge</div>
+          </div>
+        </div>
+
+        <!-- 4. GitHub Copilot Fundamentals -->
+        <div class="cert-card holo-card" data-category="fullstack" data-img="assets/images/certificates/github-copilot.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/github-copilot.jpg" alt="GitHub Copilot Fundamentals" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">AI Developer Tools</span>
+            <h4 class="cert-title">GitHub Copilot Fundamentals</h4>
+            <div class="cert-issuer"><i class="fa-brands fa-github"></i> GitHub Certified</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> AI Practitioner Badge</div>
+          </div>
+        </div>
+
+        <!-- 5. SQL to MongoDB Document Model -->
+        <div class="cert-card holo-card" data-category="db" data-img="assets/images/certificates/mongo-document-model.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/mongo-document-model.jpg" alt="Relational SQL to MongoDB" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Database Architecture</span>
+            <h4 class="cert-title">SQL to MongoDB Document Model</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-leaf"></i> MongoDB University</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Skill Badge</div>
+          </div>
+        </div>
+
+        <!-- 6. MongoDB Schema Design Patterns -->
+        <div class="cert-card holo-card" data-category="db" data-img="assets/images/certificates/mongo-schema-design.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/mongo-schema-design.jpg" alt="MongoDB Schema Design Patterns" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Database Architecture</span>
+            <h4 class="cert-title">MongoDB Schema Patterns &amp; Anti-Patterns</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-leaf"></i> MongoDB University</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Skill Badge</div>
+          </div>
+        </div>
+
+        <!-- 7. Infosys Generative AI for Developers -->
+        <div class="cert-card holo-card" data-category="ai" data-img="assets/images/certificates/infosys-generative-ai.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/infosys-generative-ai.jpg" alt="Generative AI for Developers" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Generative AI</span>
+            <h4 class="cert-title">Generative AI for Developers</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-award"></i> Infosys Springboard</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Credential</div>
+          </div>
+        </div>
+
+        <!-- 8. DevTown & MSME Prompt Engineering & GenAI -->
+        <div class="cert-card holo-card" data-category="ai" data-img="assets/images/certificates/devtown-genai.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/devtown-genai.jpg" alt="Prompt Engineering and Generative AI" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Prompt Engineering</span>
+            <h4 class="cert-title">Prompt Engineering &amp; Generative AI</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-award"></i> DevTown &amp; MSME</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Credential</div>
+          </div>
+        </div>
+
+        <!-- 9. HackerRank C# Programming -->
+        <div class="cert-card holo-card" data-category="fullstack" data-img="assets/images/certificates/hackerrank-csharp.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/hackerrank-csharp.jpg" alt="C# Skill Certification" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Systems &amp; OOP</span>
+            <h4 class="cert-title">C# Programming (Basic)</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-code"></i> HackerRank Verified Skills</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Credential</div>
+          </div>
+        </div>
+
+        <!-- 10. UI / UX Design Professional -->
+        <div class="cert-card holo-card" data-category="tools" data-img="assets/images/certificates/ui-ux-cert.jpg">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certificates/ui-ux-cert.jpg" alt="UI UX Design Professional" class="cert-img" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-category-tag">Design Systems</span>
+            <h4 class="cert-title">UI / UX Design Professional</h4>
+            <div class="cert-issuer"><i class="fa-solid fa-pen-nib"></i> Professional Certification</div>
+            <div class="cert-date"><i class="fa-regular fa-calendar"></i> Verified Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Award Highlight Strip -->
+      <div style="margin-top: 3.5rem;" class="holo-card">
+        <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; padding: 2rem 2.25rem;">
+          <div style="width: 60px; height: 60px; border-radius: 14px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.85rem; color: #f59e0b; box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div style="flex: 1;">
+            <div style="font-size: 1.35rem; font-weight: 700; color: #fff;">1st Position Champion – Scintillation (Gamecon)</div>
+            <div style="color: var(--text-secondary); font-size: 0.98rem; margin-top: 0.2rem;">
+              Awarded 1st place champion in game development, physics scripting, and interactive systems competition.
+            </div>
+          </div>
+          <div style="font-family: var(--font-code); color: var(--accent-primary); font-weight: 700; font-size: 0.95rem;">
+            18th March 2024
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">&lt;Connect /&gt;</div>
+        <h2 class="section-title">Let's Build Something <span class="text-gradient">Extraordinary</span></h2>
+        <p class="section-subtitle">Whether you're looking for a full-stack engineer, AI builder, or want to discuss a project — let's connect.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Direct Info Cards -->
+        <div class="contact-info-col">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #fff;">Direct Communication</h3>
+          <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.7;">
+            Reach out directly via phone, email, or LinkedIn. Click any contact card to copy or initiate immediate conversation.
+          </p>
+
+          <div class="contact-info-list">
+            <!-- Email -->
+            <div class="contact-info-card holo-card" id="copy-email-btn" title="Click to copy email address">
+              <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div style="flex: 1;">
+                <div class="contact-label">Email Address (Click to copy)</div>
+                <div class="contact-value">bharatkumar70233@gmail.com</div>
+              </div>
+              <i class="fa-regular fa-copy" style="color:var(--text-muted); font-size: 1.1rem;"></i>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-card holo-card" id="copy-phone-btn" title="Click to copy phone number">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div style="flex: 1;">
+                <div class="contact-label">Phone / WhatsApp (Click to copy)</div>
+                <div class="contact-value">+91 7023318654</div>
+              </div>
+              <i class="fa-regular fa-copy" style="color:var(--text-muted); font-size: 1.1rem;"></i>
+            </div>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/bharat-kumaar" target="_blank" class="contact-info-card holo-card">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div style="flex: 1;">
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-value">linkedin.com/in/bharat-kumaar</div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--text-muted);"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/bharat-kumaar" target="_blank" class="contact-info-card holo-card">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div style="flex: 1;">
+                <div class="contact-label">GitHub Profile</div>
+                <div class="contact-value">github.com/bharat-kumaar</div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--text-muted);"></i>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-info-card holo-card">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Jaipur, Rajasthan, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Form -->
+        <div class="contact-form holo-card">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; color: #fff;">Send a Direct Message</h3>
+          <form id="portfolio-contact-form">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name *</label>
+              <input type="text" id="form-name" class="form-control" placeholder="e.g. Alex Henderson" required />
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">Your Email *</label>
+              <input type="email" id="form-email" class="form-control" placeholder="e.g. alex@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject" class="form-label">Subject</label>
+              <input type="text" id="form-subject" class="form-control" placeholder="e.g. Full Stack AI Developer Role" />
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Your Message *</label>
+              <textarea id="form-message" class="form-control" placeholder="Tell me about your team, role, or project..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-regular fa-paper-plane"></i>
+              <span>Send Message to Bharat</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Lightbox Modal -->
+  <div class="modal-backdrop" id="cert-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="Certificate Preview" class="modal-img" id="modal-img" />
+      <div class="modal-caption">
+        <div>
+          <div id="modal-caption-title" style="font-weight:700; color:#fff; font-size:1.15rem;"></div>
+          <div id="modal-caption-issuer" style="color:var(--accent-primary); font-size:0.92rem; margin-top: 0.2rem;"></div>
+        </div>
+        <span style="font-size:0.82rem; color:var(--text-muted);">Press ESC or click outside to dismiss</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toast-notice">
+    <i class="fa-solid fa-circle-check" style="color:var(--accent-primary); font-size:1.35rem;"></i>
+    <span id="toast-message">Notification message</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <div style="font-family:var(--font-code); font-weight:800; color:#fff; font-size:1.25rem; margin-bottom:0.35rem;">
+          <span style="color:var(--accent-primary);">&gt;_</span> Bharat Kumar
+        </div>
+        <p class="footer-text">
+          Cinematic Code Sculptor • Full Stack AI Developer • Jaipur, India
+        </p>
+      </div>
+
+      <div class="footer-actions">
+        <a href="https://github.com/bharat-kumaar" target="_blank" class="social-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/bharat-kumaar" target="_blank" class="social-icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:bharatkumar70233@gmail.com" class="social-icon-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <button class="btn-scroll-top" id="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
