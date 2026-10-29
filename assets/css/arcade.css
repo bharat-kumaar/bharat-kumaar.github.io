@@ -1,6 +1,7 @@
 /* ==========================================================================
-   CYBERPUNK NEON ARCADE 2077 - CABINET STYLESHEET
-   Retro CRT Scanlines, Glowing Marquee, LCD Scoreboards, Touch Controls
+   CYBERPUNK NEON ARCADE 2077 - CABINET & GLOBAL LEADERBOARD STYLESHEET
+   Retro CRT Scanlines, Glowing Marquee, LCD Scoreboards, Global Hall of Fame,
+   Warp-Speed Animations, Glitch FX, and Particle Fireworks
    ========================================================================== */
 
 .arcade-section {
@@ -15,28 +16,34 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 900px;
-  height: 600px;
+  width: 950px;
+  height: 650px;
   background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0, 0, 0, 0) 70%);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.65;
+  animation: ambientPulse 6s infinite alternate ease-in-out;
+}
+
+@keyframes ambientPulse {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.45; }
+  100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.75; }
 }
 
 /* Arcade Cabinet Shell */
 .arcade-cabinet {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
-  background: rgba(10, 8, 20, 0.85);
+  background: rgba(10, 8, 20, 0.88);
   border: 2px solid var(--border-glow);
   border-radius: 24px;
-  box-shadow: 0 0 50px var(--accent-glow), inset 0 0 30px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px var(--accent-glow), inset 0 0 30px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   overflow: hidden;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /* Cabinet Marquee Top */
@@ -45,9 +52,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 2rem;
-  background: linear-gradient(180deg, rgba(30, 20, 50, 0.9) 0%, rgba(15, 10, 28, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(30, 20, 50, 0.95) 0%, rgba(15, 10, 28, 0.98) 100%);
   border-bottom: 2px solid var(--border-subtle);
   position: relative;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .arcade-marquee-title {
@@ -102,6 +111,43 @@
   to { opacity: 1; transform: scale(1.2); }
 }
 
+/* Nav View Switcher (Game vs Global Leaderboard) */
+.arcade-nav-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  gap: 4px;
+}
+
+.arcade-tab-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arcade-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.arcade-tab-btn.active {
+  background: var(--holo-gradient);
+  color: #ffffff;
+  box-shadow: 0 0 12px var(--accent-glow-strong);
+}
+
 .arcade-options {
   display: flex;
   align-items: center;
@@ -146,7 +192,7 @@
   aspect-ratio: 16 / 10;
   max-height: 520px;
   overflow: hidden;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.95);
 }
 
 /* Canvas Element */
@@ -156,6 +202,47 @@
   display: block;
   background: transparent;
   cursor: crosshair;
+}
+
+/* Screen Glitch on Damage */
+.screen-glitch-active {
+  animation: crtGlitch 0.25s linear;
+}
+
+@keyframes crtGlitch {
+  0% { transform: translate(0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-5px, 3px); filter: hue-rotate(90deg) invert(0.2); }
+  40% { transform: translate(4px, -3px); filter: hue-rotate(180deg); }
+  60% { transform: translate(-3px, 2px); filter: hue-rotate(270deg); }
+  80% { transform: translate(2px, -1px); filter: hue-rotate(360deg); }
+  100% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+
+/* Boss Warning Strobe Banner */
+.boss-warning-strobe {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  background: rgba(239, 68, 68, 0.25);
+  border-top: 2px solid #ef4444;
+  border-bottom: 2px solid #ef4444;
+  padding: 0.6rem 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 15px #ef4444;
+  z-index: 18;
+  pointer-events: none;
+  animation: strobeAlert 0.4s infinite alternate;
+  display: none;
+}
+
+@keyframes strobeAlert {
+  from { opacity: 0.3; background: rgba(239, 68, 68, 0.1); }
+  to { opacity: 1; background: rgba(239, 68, 68, 0.45); }
 }
 
 /* CRT Scanlines Overlay */
@@ -212,7 +299,7 @@
 }
 
 .hud-stat-box {
-  background: rgba(6, 4, 15, 0.75);
+  background: rgba(6, 4, 15, 0.8);
   border: 1px solid var(--border-subtle);
   padding: 0.4rem 0.9rem;
   border-radius: 8px;
@@ -254,7 +341,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 3, 12, 0.88);
+  background: rgba(5, 3, 12, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -346,6 +433,247 @@
   box-shadow: 0 0 40px var(--accent-glow-strong);
 }
 
+/* Post-Game High Score Submission Form */
+.score-submission-box {
+  margin: 1.25rem 0;
+  background: rgba(20, 15, 35, 0.85);
+  border: 1px solid var(--border-glow);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 247, 255, 0.2);
+}
+
+.score-submit-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #00f7ff;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.score-submit-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.score-callsign-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.score-callsign-input:focus {
+  border-color: #00f7ff;
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.4);
+}
+
+.btn-submit-score {
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-submit-score:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+/* ======================================================== */
+/* 🏆 GLOBAL HALL OF FAME LEADERBOARD PANEL */
+/* ======================================================== */
+.arcade-leaderboard-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 4, 15, 0.96);
+  z-index: 25;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+.arcade-leaderboard-panel.hidden {
+  display: none !important;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.leaderboard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leaderboard-title i {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 10px #f59e0b);
+}
+
+.leaderboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-refresh-leaderboard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: #cbd5e1;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-refresh-leaderboard:hover {
+  border-color: #00f7ff;
+  color: #ffffff;
+}
+
+.btn-close-leaderboard {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-close-leaderboard:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Leaderboard Table */
+.leaderboard-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.cyber-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+}
+
+.cyber-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--accent-tertiary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cyber-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.cyber-table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Rank Medals */
+.rank-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000000;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+  color: #000000;
+  box-shadow: 0 0 12px rgba(226, 232, 240, 0.6);
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #d97706, #92400e);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(217, 119, 6, 0.6);
+}
+
+.player-callsign {
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-dev-tag {
+  background: var(--holo-gradient);
+  color: #ffffff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.score-highlight {
+  color: #00f7ff;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(0, 247, 255, 0.4);
+}
+
 /* Cabinet Control Deck (Bottom Shelf) */
 .arcade-deck {
   padding: 1.25rem 2rem;
@@ -365,6 +693,7 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   color: #94a3b8;
+  flex-wrap: wrap;
 }
 
 .deck-high-score {
@@ -450,7 +779,7 @@
 @media (max-width: 768px) {
   .arcade-screen-wrap {
     aspect-ratio: 4 / 3;
-    max-height: 400px;
+    max-height: 420px;
   }
   .arcade-marquee {
     flex-direction: column;

@@ -949,9 +949,14 @@
             <span>Cyber Defender <span style="color:var(--accent-secondary);">//</span> Protocol 2077</span>
           </div>
 
-          <div class="arcade-tag-blink">
-            <span class="dot-pulse"></span>
-            <span>FREE PLAY // 60 FPS</span>
+          <!-- View Switcher Tabs -->
+          <div class="arcade-nav-tabs">
+            <button class="arcade-tab-btn active" id="arcade-tab-game">
+              <i class="fa-solid fa-gamepad"></i> Game Screen
+            </button>
+            <button class="arcade-tab-btn" id="arcade-tab-leaderboard">
+              <i class="fa-solid fa-trophy"></i> Global Leaderboard
+            </button>
           </div>
 
           <div class="arcade-options">
@@ -972,6 +977,7 @@
           <canvas id="cyber-game-canvas"></canvas>
           <div class="crt-overlay" id="crt-overlay"></div>
           <div class="crt-reflection"></div>
+          <div class="boss-warning-strobe" id="boss-warning-strobe">🚨 SYSTEM CRITICAL // BOSS INCOMING: NULL_POINTER 🚨</div>
 
           <!-- Live In-Game HUD -->
           <div class="arcade-hud">
@@ -1022,18 +1028,62 @@
               </div>
             </div>
 
+            <!-- Post-Game Score Submission Box -->
+            <div class="score-submission-box" id="score-submission-box" style="display:none;">
+              <div class="score-submit-title">
+                <i class="fa-solid fa-trophy"></i> SUBMIT TO GLOBAL HALL OF FAME
+              </div>
+              <div class="score-submit-inputs">
+                <input type="text" id="score-callsign-input" class="score-callsign-input" placeholder="YOUR CALLSIGN (E.G. NEO)" maxlength="15" autocomplete="off" />
+                <button class="btn-submit-score" id="btn-submit-callsign">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> Submit
+                </button>
+              </div>
+            </div>
+
             <button class="game-btn-play" id="overlay-play-btn">
               <i class="fa-solid fa-play"></i> Launch Defense Mission
             </button>
+          </div>
+
+          <!-- Global Hall of Fame Modal / Panel -->
+          <div class="arcade-leaderboard-panel hidden" id="arcade-leaderboard-panel">
+            <div class="leaderboard-header">
+              <div class="leaderboard-title">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Global Hall of Fame <span style="color:var(--accent-secondary); font-size:0.95rem; font-weight:600;">// LIVE CHAMPIONS</span></span>
+              </div>
+              <div class="leaderboard-actions">
+                <button class="btn-refresh-leaderboard" id="btn-refresh-leaderboard"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+                <button class="btn-close-leaderboard" id="btn-close-leaderboard"><i class="fa-solid fa-xmark"></i> Close</button>
+              </div>
+            </div>
+
+            <div class="leaderboard-table-wrap">
+              <table class="cyber-table">
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Rank</th>
+                    <th>Player Callsign</th>
+                    <th>Score</th>
+                    <th>Wave</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-tbody">
+                  <!-- Dynamic Live Rows Populated by arcade.js -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
         <!-- Cabinet Deck Bottom Bar -->
         <div class="arcade-deck">
           <div class="deck-info">
-            <span><i class="fa-solid fa-keyboard"></i> Desktop &amp; Mobile Responsive</span>
+            <span><i class="fa-solid fa-globe"></i> Real-Time Global Leaderboard Active</span>
             <span class="deck-high-score">
-              <i class="fa-solid fa-trophy"></i> Local High Score: <span id="deck-high-score-val">0</span>
+              <i class="fa-solid fa-trophy"></i> Your Best Score: <span id="deck-high-score-val">0</span>
             </span>
             <span><i class="fa-solid fa-bolt"></i> Powerups: ⚡ Rapid • 🛡️ Shield • 💥 EMP</span>
           </div>
@@ -1047,8 +1097,7 @@
             <button class="touch-btn touch-btn-fire" id="touch-btn-fire" aria-label="Fire Lasers"><i class="fa-solid fa-crosshairs"></i></button>
           </div>
         </div>
-      </div>
-    </div>
+      </div>    </div>
   </section>
 
   <!-- Curated Certificate Vault (Internships on TOP, then Best Certifications) -->
