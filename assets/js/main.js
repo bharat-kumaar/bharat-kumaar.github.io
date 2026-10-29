@@ -426,6 +426,11 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         window.location.href = 'mailto:bharatkumar70233@gmail.com?subject=Job%20Opportunity%20for%20Bharat%20Kumar';
       }, 1200);
+    } else if (lower === 'play' || lower === 'game' || lower === 'arcade' || lower === 'start') {
+      responseDiv.innerHTML = `<span style="color:#00f7ff; font-weight:bold;">🎮 [BOOTING] Cyber Defender 2077 Arcade Engine...</span><br/><span style="color:#cbd5e1;">Redirecting to Arcade Cabinet...</span>`;
+      if (window.launchCyberDefender) {
+        setTimeout(window.launchCyberDefender, 400);
+      }
     } else if (lower === 'help') {
       responseDiv.innerHTML = `<span style="color:var(--accent-primary); font-weight:bold;">Available Sandbox Commands:</span>
   • <span style="color:var(--accent-secondary)">GET /api/profile</span>   : Profile payload &amp; background
@@ -433,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
   • <span style="color:var(--accent-secondary)">GET /api/projects</span>  : Production projects index
   • <span style="color:var(--accent-secondary)">POST /api/hire</span>     : Direct hiring inquiry
   • <span style="color:var(--accent-secondary)">help</span>               : Show this command menu
+  • <span style="color:var(--accent-secondary)">play</span>               : Launch Cyber Defender 2077 Arcade Game
   • <span style="color:var(--accent-secondary)">clear</span>              : Clear terminal screen`;
     } else {
       responseDiv.innerHTML = `command not found: <span style="color:#ef4444">${escapeHtml(cmd)}</span>. Try <span style="color:var(--accent-primary)">'help'</span> or click the quick API buttons above.`;

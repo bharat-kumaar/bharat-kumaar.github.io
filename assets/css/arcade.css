@@ -1,0 +1,473 @@
+/* ==========================================================================
+   CYBERPUNK NEON ARCADE 2077 - CABINET STYLESHEET
+   Retro CRT Scanlines, Glowing Marquee, LCD Scoreboards, Touch Controls
+   ========================================================================== */
+
+.arcade-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+/* Background Ambient Glow */
+.arcade-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Arcade Cabinet Shell */
+.arcade-cabinet {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(10, 8, 20, 0.85);
+  border: 2px solid var(--border-glow);
+  border-radius: 24px;
+  box-shadow: 0 0 50px var(--accent-glow), inset 0 0 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Cabinet Marquee Top */
+.arcade-marquee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(180deg, rgba(30, 20, 50, 0.9) 0%, rgba(15, 10, 28, 0.95) 100%);
+  border-bottom: 2px solid var(--border-subtle);
+  position: relative;
+}
+
+.arcade-marquee-title {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.arcade-marquee-title i {
+  color: var(--accent-secondary);
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 10px var(--accent-secondary));
+  animation: pulseGamepad 2s infinite ease-in-out;
+}
+
+@keyframes pulseGamepad {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent-secondary)); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 18px var(--accent-secondary)); }
+}
+
+.arcade-tag-blink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.85rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--accent-tertiary);
+  border-radius: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-tertiary);
+  text-shadow: 0 0 8px var(--accent-tertiary);
+}
+
+.arcade-tag-blink .dot-pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-tertiary);
+  border-radius: 50%;
+  animation: blinkLive 1s infinite alternate;
+}
+
+@keyframes blinkLive {
+  from { opacity: 0.2; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.arcade-options {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.arcade-opt-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: #d1d5db;
+  padding: 0.45rem 0.85rem;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arcade-opt-btn:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.arcade-opt-btn.active {
+  background: var(--holo-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 0 12px var(--accent-glow-strong);
+}
+
+/* CRT Screen Wrapper */
+.arcade-screen-wrap {
+  position: relative;
+  background: #030206;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 520px;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+}
+
+/* Canvas Element */
+#cyber-game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  cursor: crosshair;
+}
+
+/* CRT Scanlines Overlay */
+.crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 10;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.crt-overlay.disabled {
+  opacity: 0;
+}
+
+/* Curved CRT Glass Reflection */
+.crt-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* HUD Overlay on Screen */
+.arcade-hud {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 15;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.hud-stat-box {
+  background: rgba(6, 4, 15, 0.75);
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hud-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--accent-tertiary);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.hud-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hud-lives {
+  display: flex;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.hud-life-heart {
+  color: #ef4444;
+  font-size: 0.95rem;
+  filter: drop-shadow(0 0 6px #ef4444);
+}
+
+/* Game Start / Game Over Screen Overlay */
+.game-ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 3, 12, 0.88);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  padding: 2rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.game-ui-overlay.hidden {
+  display: none !important;
+}
+
+.game-title-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--holo-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px var(--accent-glow));
+  margin-bottom: 0.5rem;
+}
+
+.game-subtitle {
+  color: #cbd5e1;
+  font-size: 1rem;
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.game-keys-guide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+}
+
+.key-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.kbd-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: var(--accent-tertiary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.game-btn-play {
+  padding: 0.9rem 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--holo-gradient);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 0 25px var(--accent-glow-strong);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game-btn-play:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 40px var(--accent-glow-strong);
+}
+
+/* Cabinet Control Deck (Bottom Shelf) */
+.arcade-deck {
+  padding: 1.25rem 2rem;
+  background: linear-gradient(0deg, rgba(20, 15, 35, 0.95) 0%, rgba(10, 8, 20, 0.9) 100%);
+  border-top: 2px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.deck-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.deck-high-score {
+  color: #f59e0b;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile On-Screen Arcade Touch Controls */
+.mobile-arcade-controls {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.touch-dpad {
+  display: flex;
+  gap: 12px;
+}
+
+.touch-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--border-glow);
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.15s ease;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.touch-btn:active {
+  background: var(--holo-gradient);
+  transform: scale(0.92);
+}
+
+.touch-btn-fire {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  border-color: #fca5a5;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  font-size: 1.35rem;
+}
+
+.touch-btn-fire:active {
+  background: #dc2626;
+}
+
+/* Navbar Game Badge */
+.nav-game-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  background: var(--holo-gradient);
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 8px var(--accent-glow);
+  animation: badgeBlink 1.5s infinite alternate;
+}
+
+@keyframes badgeBlink {
+  from { opacity: 0.7; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .arcade-screen-wrap {
+    aspect-ratio: 4 / 3;
+    max-height: 400px;
+  }
+  .arcade-marquee {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .arcade-options {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .game-title-logo {
+    font-size: 1.8rem;
+  }
+  .game-keys-guide {
+    display: none;
+  }
+  .mobile-arcade-controls {
+    display: flex;
+  }
+}
